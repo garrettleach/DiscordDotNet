@@ -30,5 +30,12 @@ namespace DiscordDotNet
         {
             return _DiscordWebV8Service.GetApplicationCommands(applicationId, cancellationToken);
         }
+
+        /// <inheritdoc/>
+        public async Task<Uri> GetGateway(CancellationToken? cancellationToken = null)
+        {
+            var gateway = await _DiscordWebV8Service.GetGateway(cancellationToken);
+            return new Uri(gateway.Url);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DiscordDotNet.Abstractions.DataModel;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,5 +17,11 @@ namespace DiscordDotNet
         /// <param name="cancellationToken">cancellation token</param>
         /// <returns>application commands</returns>
         Task<ApplicationCommand[]> GetApplicationCommands(string applicationId, CancellationToken? cancellationToken = null);
+        /// <summary>
+        /// Get the gateway Uri
+        /// </summary>
+        /// <param name="cancellationToken">cancellation token</param>
+        /// <returns>Uri to connect to</returns>
+        Task<Gateway> GetGateway(CancellationToken? cancellationToken = null);
     }
 }
