@@ -3,6 +3,8 @@
 # You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
 [*.cs]
 
+dotnet_diagnostic.severity = error
+dotnet_analyzer_diagnostic.severity = error
 
 #Core editorconfig formatting - indentation
 
