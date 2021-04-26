@@ -17,6 +17,14 @@ namespace DiscordDotNet.Abstractions
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>application commands</returns>
         Task<ApplicationCommand[]> GetApplicationCommands(string applicationId, CancellationToken? cancellationToken = null);
+        /// <summary>
+        /// Get a registered command for the application
+        /// </summary>
+        /// <param name="applicationId">The application ID</param>
+        /// <param name="commandId">The command ID</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>application command</returns>
+        Task<ApplicationCommand> GetApplicationCommand(string applicationId, string commandId, CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// Get the Url of the gateway

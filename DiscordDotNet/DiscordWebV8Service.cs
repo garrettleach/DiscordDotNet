@@ -1,7 +1,6 @@
 ﻿using DiscordDotNet.Abstractions.DataModel;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -52,6 +51,12 @@ namespace DiscordDotNet
         public Task<ApplicationCommand[]> GetApplicationCommands(string applicationId, CancellationToken? cancellationToken = null)
         {
             return _HttpClient.GetFromJsonAsync<ApplicationCommand[]>($"v8/applications/{applicationId}/commands", cancellationToken ?? CancellationToken.None);
+        }
+
+        /// <inheritdoc/>
+        public Task<ApplicationCommand> GetApplicationCommand(string applicationId, string commandId, CancellationToken? cancellationToken)
+        {
+            return _HttpClient.GetFromJsonAsync<ApplicationCommand>($"v8/applications/{applicationId}/commands/{commandId}", cancellationToken ?? CancellationToken.None);
         }
 
         /// <inheritdoc/>
