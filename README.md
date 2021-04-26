@@ -2,6 +2,9 @@
 
 A Discord Web API client for .NET
 
+| Build | Status |
+| .NET  | [![.NET](https://github.com/garrettleach/DiscordDotNet/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/garrettleach/DiscordDotNet/actions/workflows/dotnet.yml) |
+
 ## Features
 
 - Built on modern .NET technologies
