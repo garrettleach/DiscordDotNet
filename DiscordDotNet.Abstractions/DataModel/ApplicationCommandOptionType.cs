@@ -1,53 +1,58 @@
-﻿namespace DiscordDotNet.Abstractions.DataModel
+﻿
+namespace DiscordDotNet.Abstractions.DataModel
 {
     /// <summary>
     /// Describes the type of option
     /// </summary>
+#pragma warning disable CA1008 // Enums should have zero value
     public enum ApplicationCommandOptionType
+#pragma warning restore CA1008 // Enums should have zero value
     {
+#pragma warning disable CA1720 // Identifier contains type name
         /// <summary>
-        /// A sub command
+        /// A sub command (SUB_COMMAND)
         /// </summary>
         /// <remarks>
         /// A subcommand can hold options but not other sub commands or sub command groups
         /// </remarks>
-        SUB_COMMAND = 1,
+        SubCommand = 1,
         /// <summary>
-        /// A group of sub commands
+        /// A group of sub commands (SUB_COMMAND_GROUP)
         /// </summary>
         /// <remarks>
         /// A sub command group can hold subcommands and options, but not other sub command groups
         /// </remarks>
-        SUB_COMMAND_GROUP = 2,
+        SubCommandGroup = 2,
         /// <summary>
-        /// A string option
+        /// A string option (STRING)
         /// </summary>
         /// <remarks>
         /// You can limit the possible options by providing "choices"
         /// </remarks>
-        STRING = 3,
+        String = 3,
         /// <summary>
-        /// An integer option
+        /// An integer option (INTEGER)
         /// </summary>
         /// <remarks>
         /// You can limit the possible options by providing "choices"
         /// </remarks>
-        INTEGER = 4,
+        Integer = 4,
         /// <summary>
-        /// A boolean option
+        /// A boolean option (BOOLEAN)
         /// </summary>
-        BOOLEAN = 5,
+        Boolean = 5,
         /// <summary>
-        /// An option accepting users
+        /// An option accepting users (USER)
         /// </summary>
-        USER = 6,
+        User = 6,
         /// <summary>
-        /// An option accepting channels
+        /// An option accepting channels (CHANNEL)
         /// </summary>
-        CHANNEL = 7,
+        Channel = 7,
         /// <summary>
-        /// An option accepting roles
+        /// An option accepting roles (ROLE)
         /// </summary>
-        ROLE = 8,
+        Role = 8,
+#pragma warning restore CA1720 // Identifier contains type name
     }
 }
