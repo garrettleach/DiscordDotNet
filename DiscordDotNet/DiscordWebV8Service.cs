@@ -50,19 +50,36 @@ namespace DiscordDotNet
         /// <inheritdoc/>
         public Task<ApplicationCommand[]> GetApplicationCommands(string applicationId, CancellationToken? cancellationToken = null)
         {
+            _Logger.LogTrace($"Getting application commands for application {applicationId}");
             return _HttpClient.GetFromJsonAsync<ApplicationCommand[]>($"v8/applications/{applicationId}/commands", cancellationToken ?? CancellationToken.None);
         }
 
         /// <inheritdoc/>
         public Task<ApplicationCommand> GetApplicationCommand(string applicationId, string commandId, CancellationToken? cancellationToken)
         {
+            _Logger.LogTrace($"Getting application command for application {applicationId} with command {commandId}");
             return _HttpClient.GetFromJsonAsync<ApplicationCommand>($"v8/applications/{applicationId}/commands/{commandId}", cancellationToken ?? CancellationToken.None);
         }
 
         /// <inheritdoc/>
         public Task<Gateway> GetGateway(CancellationToken? cancellationToken = null)
         {
+            _Logger.LogTrace($"Getting gateway");
             return _HttpClient.GetFromJsonAsync<Gateway>($"v8/gateway", cancellationToken ?? CancellationToken.None);
+        }
+
+        /// <inheritdoc/>
+        public Task<ApplicationCommand[]> GetGuildApplicationCommands(string applicationId, string guildId, CancellationToken? cancellationToken = null)
+        {
+            _Logger.LogTrace($"Getting application commands for application {applicationId} in guild {guildId}");
+            return _HttpClient.GetFromJsonAsync<ApplicationCommand[]>($"v8/applications/{applicationId}/guilds/{guildId}/commands", cancellationToken ?? CancellationToken.None);
+        }
+
+        /// <inheritdoc/>
+        public Task<ApplicationCommand> GetGuildApplicationCommand(string applicationId, string guildId, string commandId, CancellationToken? cancellationToken = null)
+        {
+            _Logger.LogTrace($"Getting application command for application {applicationId} in guild {guildId} with command {commandId}");
+            return _HttpClient.GetFromJsonAsync<ApplicationCommand>($"v8/applications/{applicationId}/guilds/{guildId}/commands/{commandId}", cancellationToken ?? CancellationToken.None);
         }
     }
 }
