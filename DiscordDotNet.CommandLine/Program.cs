@@ -11,25 +11,28 @@ using System.Threading.Tasks;
 
 namespace DiscordDotNet.CommandLine
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args) => await BuildCommandLine()
-            .UseHost(_ => Host.CreateDefaultBuilder(),
+        private static async Task Main(string[] args)
+        {
+            _ = await BuildCommandLine()
+                .UseHost(_ => Host.CreateDefaultBuilder(),
                 host => {
-                    host.ConfigureLogging(logging => {
-                        logging.ClearProviders();
-                        logging.AddDebug();
+                    _ = host.ConfigureLogging(logging => {
+                        _ = logging.ClearProviders();
+                        _ = logging.AddDebug();
                     });
-                    host.ConfigureServices(services => {
-                        services.AddHttpClient<IDiscordWebV8Service, DiscordWebV8Service>();
-                        services.AddSingleton<IDiscordWebClient, DiscordWebClient>();
-                        services.AddOptions<DiscordWebClientOptions>().BindConfiguration("DiscordApiClient");
+                    _ = host.ConfigureServices(services => {
+                        _ = services.AddHttpClient<IDiscordWebV8Service, DiscordWebV8Service>();
+                        _ = services.AddSingleton<IDiscordWebClient, DiscordWebClient>();
+                        _ = services.AddOptions<DiscordWebClientOptions>().BindConfiguration("DiscordApiClient");
 
                     });
                 })
-            .UseDefaults()
-            .Build()
-            .InvokeAsync(args);
+                .UseDefaults()
+                .Build()
+                .InvokeAsync(args).ConfigureAwait(false);
+        }
 
         private static CommandLineBuilder BuildCommandLine()
         {
