@@ -1,12 +1,16 @@
 # DiscordDotNet
+
 A Discord Web API client for .NET
 
----
+## Features
 
-A limited client for the Discord Web API designed primarily for creating simple bots.
+- Built on modern .NET technologies
+- Cross platform
+- Demo command line application
 
 ## Roadmap
 
 1. Slash Command APIs
 2. Initial Gateway Communication
 3. Interaction APIs
+4. Documentation website building
