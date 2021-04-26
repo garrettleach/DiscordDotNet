@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet", "DiscordDotNet\DiscordDotNet.csproj", "{BB890DB3-6291-49A1-B5D1-72DD9FDF9225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet", "src\DiscordDotNet\DiscordDotNet.csproj", "{BB890DB3-6291-49A1-B5D1-72DD9FDF9225}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet.Abstractions", "DiscordDotNet.Abstractions\DiscordDotNet.Abstractions.csproj", "{67954941-3ED8-4E80-968A-98AE0E0D7CF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet.Abstractions", "src\DiscordDotNet.Abstractions\DiscordDotNet.Abstractions.csproj", "{67954941-3ED8-4E80-968A-98AE0E0D7CF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet.CommandLine", "DiscordDotNet.CommandLine\DiscordDotNet.CommandLine.csproj", "{1CF6F383-06E7-4F82-A9E2-470F563DCA12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscordDotNet.CommandLine", "src\DiscordDotNet.CommandLine\DiscordDotNet.CommandLine.csproj", "{1CF6F383-06E7-4F82-A9E2-470F563DCA12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{082B88AF-9317-4993-B89A-53186F18BE61}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		.editorconfig = .editorconfig
-		Directory.Build.props = Directory.Build.props
+		src\.editorconfig = src\.editorconfig
+		src\Directory.Build.props = src\Directory.Build.props
 		README.md = README.md
 	EndProjectSection
 EndProject
