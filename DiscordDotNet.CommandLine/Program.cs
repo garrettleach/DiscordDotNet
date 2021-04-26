@@ -26,7 +26,6 @@ namespace DiscordDotNet.CommandLine
                         _ = services.AddHttpClient<IDiscordWebV8Service, DiscordWebV8Service>();
                         _ = services.AddSingleton<IDiscordWebClient, DiscordWebClient>();
                         _ = services.AddOptions<DiscordWebClientOptions>().BindConfiguration("DiscordApiClient");
-
                     });
                 })
                 .UseDefaults()
