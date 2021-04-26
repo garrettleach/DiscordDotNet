@@ -20,7 +20,7 @@ namespace DiscordDotNet.CommandLine.Commands
         private static async Task<int> Exec(InvocationContext invocationContext, IHost host)
         {
             var client = host.Services.GetRequiredService<IDiscordWebClient>();
-            var gateway = await client.GetGateway();
+            var gateway = await client.GetGateway().ConfigureAwait(false);
 
             invocationContext.Console.Append(new ContentView(gateway.ToString()));
 
