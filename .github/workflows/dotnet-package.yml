@@ -25,4 +25,4 @@ jobs:
     - name: Create the Implementation package
       run: dotnet pack --configuration Release src/DiscordDotNet
     - name: Publish the packages to GPR
-      run: dotnet nuget push src/DiscordDotNet**/bin/Release/*.nupkg
+      run: dotnet nuget push --api-key $NUGET_AUTH_TOKEN src/DiscordDotNet**/bin/Release/*.nupkg
