@@ -18,9 +18,12 @@ namespace DiscordDotNet.CommandLine
             _ = await BuildCommandLine()
                 .UseHost(_ => Host.CreateDefaultBuilder(),
                 host => {
-                    _ = host.ConfigureLogging(logging => {
-                        _ = logging.ClearProviders();
-                        _ = logging.AddDebug();
+                    _ = host.ConfigureLogging((ctx, logging) => {
+                        if (ctx.HostingEnvironment.IsDevelopment())
+                        {
+                            _ = logging.ClearProviders();
+                            _ = logging.AddDebug();
+                        }
                     });
                     _ = host.ConfigureServices(services => {
                         _ = services.AddHttpClient<IDiscordWebV8Service, DiscordWebV8Service>();
