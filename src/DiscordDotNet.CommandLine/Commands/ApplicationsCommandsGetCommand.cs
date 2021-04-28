@@ -1,5 +1,6 @@
 ﻿using DiscordDotNet.Abstractions;
 using DiscordDotNet.Abstractions.DataModel;
+using DiscordDotNet.CommandLine.Options;
 using DiscordDotNet.CommandLine.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,21 +18,21 @@ namespace DiscordDotNet.CommandLine.Commands
         {
             var commandIdOpt = new Option<string>("--command-id", "The command id to request (omit for all)", ArgumentArity.ZeroOrOne);
             AddOption(commandIdOpt);
-            Handler = CommandHandler.Create<InvocationContext, IHost, string, string>(Exec);
+            Handler = CommandHandler.Create<InvocationContext, IHost, ApplicationOptions, string>(Exec);
         }
 
-        private async Task<int> Exec(InvocationContext invocationContext, IHost host, string applicationId, string commandId = null)
+        private async Task<int> Exec(InvocationContext invocationContext, IHost host, ApplicationOptions appIdOptions, string commandId = null)
         {
             var client = host.Services.GetRequiredService<IDiscordWebClient>();
             if (commandId is string commId)
             {
-                var appCommands = await client.GetApplicationCommand(applicationId, commId).ConfigureAwait(false);
+                var appCommands = await client.GetApplicationCommand(appIdOptions.ApplicationId, commId).ConfigureAwait(false);
 
                 invocationContext.Console.Append(new JsonView<ApplicationCommand>(appCommands));
             }
             else
             {
-                var commands = await client.GetApplicationCommands(applicationId).ConfigureAwait(false);
+                var commands = await client.GetApplicationCommands(appIdOptions.ApplicationId).ConfigureAwait(false);
 
                 var tableView = new ApplicationCommandTableView(commands);
 
