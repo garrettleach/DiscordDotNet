@@ -44,7 +44,7 @@ namespace DiscordDotNet
         {
             _Logger.LogTrace($"Getting gateway");
             var gateway = await _DiscordWebV8Service.GetGateway(cancellationToken).ConfigureAwait(false);
-            return new Uri(gateway.Url);
+            return gateway.Url;
         }
 
         /// <inheritdoc/>
