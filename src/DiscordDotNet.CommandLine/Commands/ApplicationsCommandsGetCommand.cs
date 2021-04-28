@@ -8,6 +8,7 @@ using System.CommandLine;
 using System.CommandLine.Invocation;
 using System.CommandLine.Rendering;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DiscordDotNet.CommandLine.Commands
@@ -18,21 +19,21 @@ namespace DiscordDotNet.CommandLine.Commands
         {
             var commandIdOpt = new Option<string>("--command-id", "The command id to request (omit for all)", ArgumentArity.ZeroOrOne);
             AddOption(commandIdOpt);
-            Handler = CommandHandler.Create<InvocationContext, IHost, ApplicationOptions, string>(Exec);
+            Handler = CommandHandler.Create<InvocationContext, IHost, ApplicationOptions, CancellationToken, string>(Exec);
         }
 
-        private async Task<int> Exec(InvocationContext invocationContext, IHost host, ApplicationOptions appIdOptions, string commandId = null)
+        private async Task<int> Exec(InvocationContext invocationContext, IHost host, ApplicationOptions appIdOptions, CancellationToken cancellationToken, string commandId = null)
         {
             var client = host.Services.GetRequiredService<IDiscordWebClient>();
             if (commandId is string commId)
             {
-                var appCommands = await client.GetApplicationCommand(appIdOptions.ApplicationId, commId).ConfigureAwait(false);
+                var appCommands = await client.GetApplicationCommand(appIdOptions.ApplicationId, commId, cancellationToken).ConfigureAwait(false);
 
                 invocationContext.Console.Append(new JsonView<ApplicationCommand>(appCommands));
             }
             else
             {
-                var commands = await client.GetApplicationCommands(appIdOptions.ApplicationId).ConfigureAwait(false);
+                var commands = await client.GetApplicationCommands(appIdOptions.ApplicationId, cancellationToken).ConfigureAwait(false);
 
                 var tableView = new ApplicationCommandTableView(commands);
 

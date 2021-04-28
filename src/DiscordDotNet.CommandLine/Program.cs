@@ -31,6 +31,7 @@ namespace DiscordDotNet.CommandLine
                         _ = services.AddOptions<DiscordWebClientOptions>().BindConfiguration("DiscordApiClient");
                     });
                 })
+                .CancelOnProcessTermination()
                 .UseDefaults()
                 .Build()
                 .InvokeAsync(args).ConfigureAwait(false);
