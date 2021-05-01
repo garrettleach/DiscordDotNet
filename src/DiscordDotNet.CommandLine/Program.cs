@@ -1,5 +1,6 @@
 ﻿using DiscordDotNet.Abstractions;
 using DiscordDotNet.CommandLine.Commands;
+using DiscordDotNet.CommandLine.Commands.ApplicationCommands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -28,7 +29,7 @@ namespace DiscordDotNet.CommandLine
                     _ = host.ConfigureServices(services => {
                         _ = services.AddHttpClient<IDiscordWebV8Service, DiscordWebV8Service>();
                         _ = services.AddSingleton<IDiscordWebClient, DiscordWebClient>();
-                        _ = services.AddOptions<DiscordWebClientOptions>().BindConfiguration("DiscordApiClient");
+                        _ = services.AddOptions<DiscordWebClientOptions>().BindCommandLine();
                     });
                 })
                 .CancelOnProcessTermination()
@@ -41,7 +42,10 @@ namespace DiscordDotNet.CommandLine
         {
             var rootCommand = new RootCommand("Tool to excercise Discord API")
             {
-                new ApplicationsCommand(),
+                new Option<string>("--bottoken", "Bot Token to use for request"),
+                new Option<string>("--bearertoken", "Beraer Token to use for request"),
+                new Option<string>("--baseurl", () => "https://discord.com/api/", "Base Discord API url to use"),
+                new ApplicationCommand(),
                 new GatewayCommand()
             };
 
