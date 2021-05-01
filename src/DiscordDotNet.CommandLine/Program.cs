@@ -47,7 +47,7 @@ namespace DiscordDotNet.CommandLine
                 new Option<string>("--bearertoken", "Beraer Token to use for request"),
                 new Option<string>("--baseurl", () => "https://discord.com/api/", "Base Discord API url to use"),
                 new ApplicationCommand(),
-                new GatewayCommand()
+                new GatewayUrlCommand()
             };
 
             return new CommandLineBuilder(rootCommand);
