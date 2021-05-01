@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace DiscordDotNet.Abstractions.DataModel
+namespace DiscordDotNet.WebApi.Abstractions.DataModel
 {
     /// <summary>
     /// Description of sn option in an application command

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace DiscordDotNet.Abstractions.DataModel
+namespace DiscordDotNet.WebApi.Abstractions.DataModel
 {
     /// <summary>
     /// Description of an application command

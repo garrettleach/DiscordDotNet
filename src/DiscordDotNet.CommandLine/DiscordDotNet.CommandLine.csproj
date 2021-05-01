@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscordDotNet.Abstractions\DiscordDotNet.Abstractions.csproj" />
-    <ProjectReference Include="..\DiscordDotNet\DiscordDotNet.csproj" />
+    <ProjectReference Include="..\DiscordDotNet.WebApi.Abstractions\DiscordDotNet.WebApi.Abstractions.csproj" />
+    <ProjectReference Include="..\DiscordDotNet.WebApi\DiscordDotNet.WebApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

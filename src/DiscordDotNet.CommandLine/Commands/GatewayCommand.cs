@@ -1,4 +1,4 @@
-﻿using DiscordDotNet.Abstractions;
+﻿using DiscordDotNet.WebApi.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.CommandLine;

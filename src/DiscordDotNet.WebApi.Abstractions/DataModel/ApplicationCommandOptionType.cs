@@ -1,5 +1,5 @@
 ﻿
-namespace DiscordDotNet.Abstractions.DataModel
+namespace DiscordDotNet.WebApi.Abstractions.DataModel
 {
     /// <summary>
     /// Describes the type of option

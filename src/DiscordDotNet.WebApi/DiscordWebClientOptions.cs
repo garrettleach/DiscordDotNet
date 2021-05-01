@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DiscordDotNet
+namespace DiscordDotNet.WebApi
 {
     /// <summary>
     /// Options for the api client
