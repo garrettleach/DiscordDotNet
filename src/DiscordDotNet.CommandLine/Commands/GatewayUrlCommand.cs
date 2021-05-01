@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace DiscordDotNet.CommandLine.Commands
 {
-    internal class GatewayCommand : Command
+    internal class GatewayUrlCommand : Command
     {
-        public GatewayCommand() : base("gateway", "Get the gateway")
+        public GatewayUrlCommand() : base("gatewayurl", "Get the gateway")
         {
             Handler = CommandHandler.Create<InvocationContext, IHost, CancellationToken>(Exec);
         }
