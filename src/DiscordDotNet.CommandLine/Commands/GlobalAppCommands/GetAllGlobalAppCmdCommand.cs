@@ -1,4 +1,4 @@
-﻿using DiscordDotNet.Abstractions;
+﻿using DiscordDotNet.WebApi.Abstractions;
 using DiscordDotNet.CommandLine.Options;
 using DiscordDotNet.CommandLine.Views;
 using Microsoft.Extensions.DependencyInjection;

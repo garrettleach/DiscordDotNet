@@ -1,11 +1,11 @@
-﻿using DiscordDotNet.Abstractions;
-using DiscordDotNet.Abstractions.DataModel;
+﻿using DiscordDotNet.WebApi.Abstractions;
+using DiscordDotNet.WebApi.Abstractions.DataModel;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscordDotNet
+namespace DiscordDotNet.WebApi
 {
     /// <summary>
     /// The client for Discord web APIs

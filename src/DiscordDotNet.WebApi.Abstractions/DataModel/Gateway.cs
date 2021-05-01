@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace DiscordDotNet.Abstractions.DataModel
+namespace DiscordDotNet.WebApi.Abstractions.DataModel
 {
     /// <summary>
     /// Object returned by the Get Gateway API

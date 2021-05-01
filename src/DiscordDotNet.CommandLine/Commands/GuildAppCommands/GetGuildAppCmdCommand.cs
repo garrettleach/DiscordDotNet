@@ -1,5 +1,5 @@
-﻿using DiscordDotNet.Abstractions;
-using DiscordDotNet.Abstractions.DataModel;
+﻿using DiscordDotNet.WebApi.Abstractions;
+using DiscordDotNet.WebApi.Abstractions.DataModel;
 using DiscordDotNet.CommandLine.Options;
 using DiscordDotNet.CommandLine.Views;
 using Microsoft.Extensions.DependencyInjection;

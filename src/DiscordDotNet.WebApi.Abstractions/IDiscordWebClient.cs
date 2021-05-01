@@ -1,9 +1,9 @@
-﻿using DiscordDotNet.Abstractions.DataModel;
+﻿using DiscordDotNet.WebApi.Abstractions.DataModel;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscordDotNet.Abstractions
+namespace DiscordDotNet.WebApi.Abstractions
 {
     /// <summary>
     /// Interface for the Discord web APIs

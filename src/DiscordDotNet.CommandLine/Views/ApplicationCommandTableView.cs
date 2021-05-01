@@ -1,4 +1,4 @@
-﻿using DiscordDotNet.Abstractions.DataModel;
+﻿using DiscordDotNet.WebApi.Abstractions.DataModel;
 using System.CommandLine.Rendering.Views;
 
 namespace DiscordDotNet.CommandLine.Views

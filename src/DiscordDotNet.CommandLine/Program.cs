@@ -1,4 +1,4 @@
-﻿using DiscordDotNet.Abstractions;
+﻿using DiscordDotNet.WebApi.Abstractions;
 using DiscordDotNet.CommandLine.Commands;
 using DiscordDotNet.CommandLine.Commands.ApplicationCommands;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +9,7 @@ using System.CommandLine.Builder;
 using System.CommandLine.Hosting;
 using System.CommandLine.Parsing;
 using System.Threading.Tasks;
+using DiscordDotNet.WebApi;
 
 namespace DiscordDotNet.CommandLine
 {

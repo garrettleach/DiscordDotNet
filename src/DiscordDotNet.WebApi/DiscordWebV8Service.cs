@@ -1,4 +1,4 @@
-﻿using DiscordDotNet.Abstractions.DataModel;
+﻿using DiscordDotNet.WebApi.Abstractions.DataModel;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Net.Http;
@@ -7,7 +7,7 @@ using System.Net.Http.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DiscordDotNet
+namespace DiscordDotNet.WebApi
 {
     /// <summary>
     /// Service to make underlying requests against the Discord web APIs (v8)
